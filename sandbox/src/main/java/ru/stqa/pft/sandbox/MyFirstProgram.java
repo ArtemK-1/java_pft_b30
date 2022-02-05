@@ -5,15 +5,18 @@ public class MyFirstProgram{
   public static void main (String[] args){
     hello("world");
 
-    double len = 5;
-    System.out.printf("Площадь квадарата со стороной " + len + " = " + area(len));
+
+    Square s = new Square(5);
+    System.out.println("Площадь квадарата со стороной " + s.l + " = " + s.area());
+
+    Rectangle r = new Rectangle(5, 10);
+    System.out.println("Площадь прямоугольника = " + r.area());
+
   }
 
   public static void hello(String somebody){
     System.out.println("Hello, " + somebody + "!");
   }
 
-  public static double area(double l){
-    return l * l;
-  }
+
 }

@@ -9,6 +9,6 @@ public class Square {
     };
 
     public double area(){
-        return this.l;
+        return this.l * this.l;
     }
 }

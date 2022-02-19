@@ -31,7 +31,7 @@ public class ContactData {
         return homePhone;
     }
 
-    public String geteMail() {
+    public String getEmail() {
         return eMail;
     }
 }

@@ -25,7 +25,6 @@ public class ContactHelper extends HelperBase {
         System.out.println(contactData.getGroup());
         if (creation) {
             new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-            //new Select(wd.findElement(By.name("new_group"))).selectByVisibleText("test1");
         } else {
             Assert.assertFalse(isElementPresent(By.name("new_group")));
         }
@@ -50,5 +49,15 @@ public class ContactHelper extends HelperBase {
     public void deleteContact() {
         click(By.xpath("//input[@value='Delete']"));
         wd.switchTo().alert().accept();
+    }
+
+    public void createContact(ContactData contact, boolean b) {
+        initContactCreation();
+        fillContactForm(contact, b);
+        saveContact();
+    }
+
+    public boolean isThereAContact() {
+        return isElementPresent(By.name("selected[]"));
     }
 }

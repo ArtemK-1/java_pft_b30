@@ -15,8 +15,7 @@ public class ContactModificationTests extends TestBase{
                     "iv",
                     "+79001230001",
                     "mail@mail.ru",
-                    "test1"),
-                    true);
+                    "test1"));
         }
         app.getNavigationHelper().gotoHomePage();
         app.getContactHelper().selectContact();

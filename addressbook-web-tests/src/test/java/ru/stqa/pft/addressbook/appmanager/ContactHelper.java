@@ -72,9 +72,9 @@ public class ContactHelper extends HelperBase {
         return wd.findElements(By.name("selected[]")).size();
     }
 
-    public List<ContactData> getContactList() {
+    /*public List<ContactData> getContactList() {
         List<ContactData> contacts = new ArrayList<ContactData>();
-        List<WebElement> elements = wd.findElements(By.cssSelector("tr.entry"));
+        List<WebElement> elements = wd.findElements(By.cssSelector());
         for (WebElement element: elements){
             String firstName = element.getText();
             String lastName = element.getText();
@@ -82,5 +82,5 @@ public class ContactHelper extends HelperBase {
             contacts.add(contact);
         }
         return contacts;
-    }
+    }*/
 }

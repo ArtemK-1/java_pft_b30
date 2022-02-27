@@ -16,7 +16,7 @@ public class ContactDeletionTests extends TestBase{
                     "iv",
                     "+79001230001",
                     "mail@mail.ru",
-                    "test1"));
+                    null));
             app.getNavigationHelper().gotoHomePage();
         }
         int before = app.getContactHelper().getContactCount();

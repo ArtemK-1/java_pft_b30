@@ -19,13 +19,11 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void testContactCreation(){
-        ContactData contact = new ContactData(
-                "Андрей",
-                "Куликов",
-                "iv",
-                "+79001230001",
-                "mail@mail.ru",
-                "test1");
+        ContactData contact = new ContactData()
+                .withFirstName("Андрей").withLastName("Куликов")
+                .withNickName("iv").withHomePhone("+79001230001")
+                .withEmail("mail@mail.ru").withGroup("test1");
+
         if (! app.group().isThereAGroup()){
             app.group().create(new GroupData().withName(contact.getGroup()));
         }

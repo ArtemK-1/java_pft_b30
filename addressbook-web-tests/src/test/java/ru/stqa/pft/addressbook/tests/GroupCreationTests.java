@@ -1,6 +1,7 @@
 package ru.stqa.pft.addressbook.tests;
 
 import org.testng.Assert;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import ru.stqa.pft.addressbook.model.GroupData;
 
@@ -10,9 +11,13 @@ import java.util.List;
 
 public class GroupCreationTests extends TestBase{
 
+    @BeforeMethod
+    public void ensurePreconditions(){
+        app.getNavigationHelper().gotoGroupPage();
+    }
+
     @Test
     public void testGroupCreation() {
-        app.getNavigationHelper().gotoGroupPage();
         List<GroupData> before = app.getGroupHelper().getGroupList();
         GroupData group = new GroupData("test2", null, null);
         app.getGroupHelper().createGroup(group);

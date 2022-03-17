@@ -27,7 +27,7 @@ public class ContactCreationTests extends TestBase {
                 "mail@mail.ru",
                 "test1");
         if (! app.group().isThereAGroup()){
-            app.group().create(new GroupData(contact.getGroup(), null, null));
+            app.group().create(new GroupData().withName(contact.getGroup()));
         }
         app.goTo().HomePage();
         List<ContactData> before = app.contact().list();

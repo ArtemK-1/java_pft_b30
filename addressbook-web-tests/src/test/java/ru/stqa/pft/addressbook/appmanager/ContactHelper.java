@@ -6,9 +6,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
-
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 public class ContactHelper extends HelperBase {
 
@@ -40,15 +40,12 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("add new"));
     }
 
-    public void select(int index) {
-        wd.findElements(By.name("selected[]")).get(index).click();
+    public void selectContact(int id) {
+        wd.findElement(By.cssSelector("input[value='" + id + "']")).click();
     }
 
-    public void initLastContactModification() {
-        //click(By.xpath("//img[@alt='Edit']"));
-        List<WebElement> elements = wd.findElements(By.cssSelector("[name='entry']"));
-        List<WebElement> cells = elements.get(elements.size() - 1).findElements(By.tagName("td"));
-        cells.get(7).click();
+    public void initContactModification(int id) {
+        wd.findElement(By.cssSelector("a[href='edit.php?id=" + id + "']")).click();
     }
 
     public void updateContact() {
@@ -58,6 +55,11 @@ public class ContactHelper extends HelperBase {
     public void delete() {
         click(By.xpath("//input[@value='Delete']"));
         wd.switchTo().alert().accept();
+    }
+
+    public void delete(ContactData contact) {
+        selectContact(contact.getId());
+        delete();
     }
 
     public void create(ContactData contact) {
@@ -72,9 +74,9 @@ public class ContactHelper extends HelperBase {
         saveContact();
     }
 
-    public void modify(int index, ContactData contact) {
-        select(index);
-        initLastContactModification();
+    public void modify(ContactData contact) {
+        selectContact(contact.getId());
+        initContactModification(contact.getId());
         fillContactForm(contact,false);
         updateContact();
         gotoHomePage();
@@ -87,16 +89,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
     }
 
-    public boolean isThereAContact() {
-        return isElementPresent(By.name("selected[]"));
-    }
-
-    public int getContactCount() {
-        return wd.findElements(By.name("selected[]")).size();
-    }
-
-    public List<ContactData> list() {
-        List<ContactData> contacts = new ArrayList<ContactData>();
+    public Set<ContactData> all() {
+        Set<ContactData> contacts = new HashSet<ContactData>();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element: elements){
             List<WebElement> cells = element.findElements(By.tagName("td"));

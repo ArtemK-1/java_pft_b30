@@ -6,6 +6,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import ru.stqa.pft.addressbook.model.ContactData;
+import ru.stqa.pft.addressbook.model.Contacts;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -26,7 +28,6 @@ public class ContactHelper extends HelperBase {
         type(By.name("nickname"), contactData.getNickName());
         type(By.name("home"), contactData.getHomePhone());
         type(By.name("email"), contactData.getEmail());
-        System.out.println(contactData.getGroup());
         if (creation) {
             if (contactData.getGroup() != null) {
                 new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
@@ -89,8 +90,8 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
     }
 
-    public Set<ContactData> all() {
-        Set<ContactData> contacts = new HashSet<ContactData>();
+    public Contacts all() {
+        Contacts contacts = new Contacts();
         List<WebElement> elements = wd.findElements(By.name("entry"));
         for (WebElement element: elements){
             List<WebElement> cells = element.findElements(By.tagName("td"));

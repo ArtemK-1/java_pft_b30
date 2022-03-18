@@ -44,7 +44,7 @@ public class ContactHelper extends HelperBase {
         wd.findElements(By.name("selected[]")).get(index).click();
     }
 
-    public void initContactModification() {
+    public void initLastContactModification() {
         //click(By.xpath("//img[@alt='Edit']"));
         List<WebElement> elements = wd.findElements(By.cssSelector("[name='entry']"));
         List<WebElement> cells = elements.get(elements.size() - 1).findElements(By.tagName("td"));
@@ -74,7 +74,7 @@ public class ContactHelper extends HelperBase {
 
     public void modify(int index, ContactData contact) {
         select(index);
-        initContactModification();
+        initLastContactModification();
         fillContactForm(contact,false);
         updateContact();
         gotoHomePage();

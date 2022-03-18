@@ -24,7 +24,7 @@ public class ContactCreationTests extends TestBase {
                 .withNickName("iv").withHomePhone("+79001230001")
                 .withEmail("mail@mail.ru").withGroup("test1");
 
-        if (! app.group().isThereAGroup()){
+        if (app.group().all().size() == 0){
             app.group().create(new GroupData().withName(contact.getGroup()));
         }
         app.goTo().HomePage();

@@ -20,10 +20,9 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void testContactCreation(){
-        ContactData contact = new ContactData()
-                .withFirstName("Андрей").withLastName("Куликов")
-                .withNickName("iv").withHomePhone("+79001230001")
-                .withEmail("mail@mail.ru").withGroup("test1");
+        ContactData contact = new ContactData().withFirstName("Petr").withLastName("Petrov")
+                .withAddress("moscow city 123").withHomePhone("+7123").withMobilePhone("+7456")
+                .withWorkPhone("+7789").withEmail("test@ya.ru");
 
         if (app.group().all().size() == 0){
             app.group().create(new GroupData().withName(contact.getGroup()));

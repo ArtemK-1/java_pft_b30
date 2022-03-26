@@ -22,7 +22,7 @@ public class ContactCreationTests extends TestBase {
 
     @Test
     public void testContactCreation(){
-        File photo = new File("src/test/recources/image.jpg");
+        File photo = new File("src/test/resources/image.jpg");
         ContactData contact = new ContactData().withFirstName("Petr").withLastName("Petrov")
                 .withAddress("moscow city 123").withHomePhone("+7123").withMobilePhone("+7456")
                 .withWorkPhone("+7789").withEmail("test@ya.ru").withPhoto(photo);

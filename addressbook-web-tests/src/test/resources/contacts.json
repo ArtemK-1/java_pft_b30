@@ -7,7 +7,7 @@
     "homePhone": "HomePhone 0",
     "mobilePhone": "MobilePhone 0",
     "workPhone": "WorkPhone 0",
-    "eMail": "Email 0"
+    "eMail": "Email0@mail.ru"
   },
   {
     "firstName": "FirstName 1",
@@ -17,7 +17,7 @@
     "homePhone": "HomePhone 1",
     "mobilePhone": "MobilePhone 1",
     "workPhone": "WorkPhone 1",
-    "eMail": "Email 1"
+    "eMail": "Email1@mail.ru"
   },
   {
     "firstName": "FirstName 2",
@@ -27,6 +27,6 @@
     "homePhone": "HomePhone 2",
     "mobilePhone": "MobilePhone 2",
     "workPhone": "WorkPhone 2",
-    "eMail": "Email 2"
+    "eMail": "Email2@mail.ru"
   }
 ]

@@ -25,6 +25,7 @@ public class ContactData {
     private String mobilePhone;
     @Expose
     private String workPhone;
+    private String phone2;
     private String allPhones;
     @Expose
     private String eMail;
@@ -74,8 +75,9 @@ public class ContactData {
         return this;
     }
 
-    public String getAllPhones() {
-        return allPhones;
+    public ContactData withPhone2(String phone2) {
+        this.phone2 = phone2;
+        return this;
     }
 
     public ContactData withAllPhones(String allPhones) {
@@ -143,6 +145,12 @@ public class ContactData {
         return workPhone;
     }
 
+    public String getPhone2() {
+        return phone2;
+    }
+
+    public String getAllPhones() { return allPhones; }
+
     public String getEmail() {
         return eMail;
     }
@@ -155,11 +163,10 @@ public class ContactData {
         return email3;
     }
 
-    public String getAllEmails() {
-        return allEmails;
-    }
+    public String getAllEmails() { return allEmails; }
 
     public String getGroup() { return group; }
+
     public File getPhoto() { return photo; }
 
     @Override

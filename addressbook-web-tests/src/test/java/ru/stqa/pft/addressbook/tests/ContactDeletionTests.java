@@ -12,6 +12,7 @@ import ru.stqa.pft.addressbook.model.Groups;
 import java.util.Set;
 
 import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.MatcherAssert.assertThat;
 import static org.testng.Assert.assertEquals;
 
 public class ContactDeletionTests extends TestBase{
@@ -43,6 +44,7 @@ public class ContactDeletionTests extends TestBase{
         app.goTo().HomePage();
         assertEquals(app.contact().count(), before.size() -1);
         Contacts after = app.db().contacts();
-        MatcherAssert.assertThat(after, equalTo(before.without(deletedContact)));
+        assertThat(after, equalTo(before.without(deletedContact)));
+        verifyContactListInUI();
     }
 }

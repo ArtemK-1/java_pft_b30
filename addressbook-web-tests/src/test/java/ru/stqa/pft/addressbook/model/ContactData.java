@@ -18,52 +18,69 @@ public class ContactData {
     @Id
     @Column(name = "id")
     private int id = Integer.MAX_VALUE;
+
     @Expose
     @Column(name = "firstname")
     private String firstName;
+
     @Expose
     @Column(name = "lastname")
     private String lastName;
+
     @Expose
     @Column(name = "nickname")
     private String nickName;
+
     @Expose
     @Column(name = "address")
     @Type(type = "text")
     private String address;
+
     @Expose
     @Column(name = "home")
     @Type(type = "text")
     private String homePhone;
+
     @Expose
     @Column(name = "mobile")
     @Type(type = "text")
     private String mobilePhone;
+
     @Expose
     @Column(name = "work")
     @Type(type = "text")
     private String workPhone;
+
+    @Expose
     @Column(name = "phone2")
     @Type(type = "text")
     private String phone2;
+
     @Transient
     private String allPhones;
+
     @Expose
     @Column(name = "email")
     @Type(type = "text")
     private String eMail;
+
+    @Expose
     @Column(name = "email2")
     @Type(type = "text")
     private String email2;
+
+    @Expose
     @Column(name = "email3")
     @Type(type = "text")
     private String email3;
+
     @Transient
     private String allEmails;
+
     @Transient
     private String group;
-    @Column(name = "photo")
-    @Type(type = "text")
+
+    @Transient
     private String photo;
 
     public ContactData withId(int id) {
@@ -206,6 +223,15 @@ public class ContactData {
                 "id=" + id +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
+                ", nickName='" + nickName + '\'' +
+                ", address='" + address + '\'' +
+                ", homePhone='" + homePhone + '\'' +
+                ", mobilePhone='" + mobilePhone + '\'' +
+                ", workPhone='" + workPhone + '\'' +
+                ", phone2='" + phone2 + '\'' +
+                ", eMail='" + eMail + '\'' +
+                ", email2='" + email2 + '\'' +
+                ", email3='" + email3 + '\'' +
                 '}';
     }
 
@@ -214,11 +240,11 @@ public class ContactData {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ContactData that = (ContactData) o;
-        return id == that.id && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName);
+        return id == that.id && Objects.equals(firstName, that.firstName) && Objects.equals(lastName, that.lastName) && Objects.equals(nickName, that.nickName) && Objects.equals(address, that.address) && Objects.equals(homePhone, that.homePhone) && Objects.equals(mobilePhone, that.mobilePhone) && Objects.equals(workPhone, that.workPhone) && Objects.equals(phone2, that.phone2) && Objects.equals(eMail, that.eMail) && Objects.equals(email2, that.email2) && Objects.equals(email3, that.email3);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, firstName, lastName);
+        return Objects.hash(id, firstName, lastName, nickName, address, homePhone, mobilePhone, workPhone, phone2, eMail, email2, email3);
     }
 }

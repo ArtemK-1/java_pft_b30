@@ -7,7 +7,10 @@
     "homePhone": "HomePhone 0",
     "mobilePhone": "MobilePhone 0",
     "workPhone": "WorkPhone 0",
-    "eMail": "Email0@mail.ru"
+    "phone2": "Phone2 0",
+    "eMail": "Email0@mail.ru",
+    "email2": "Email0@ya.ru",
+    "email3": "Email0@google.ru"
   },
   {
     "firstName": "FirstName 1",
@@ -17,7 +20,10 @@
     "homePhone": "HomePhone 1",
     "mobilePhone": "MobilePhone 1",
     "workPhone": "WorkPhone 1",
-    "eMail": "Email1@mail.ru"
+    "phone2": "Phone2 1",
+    "eMail": "Email1@mail.ru",
+    "email2": "Email1@ya.ru",
+    "email3": "Email1@google.ru"
   },
   {
     "firstName": "FirstName 2",
@@ -27,6 +33,9 @@
     "homePhone": "HomePhone 2",
     "mobilePhone": "MobilePhone 2",
     "workPhone": "WorkPhone 2",
-    "eMail": "Email2@mail.ru"
+    "phone2": "Phone2 2",
+    "eMail": "Email2@mail.ru",
+    "email2": "Email2@ya.ru",
+    "email3": "Email2@google.ru"
   }
 ]
